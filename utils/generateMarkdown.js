@@ -44,3 +44,45 @@ function renderLicenseTable(license){
     return ' ';
   }
 }
+// Function to generate markdown for README file
+function generateMarkdown(data) {
+  return `
+  # ${data.title}
+
+
+  ${renderLicenseBadge(data.license)}
+  
+  ## Table-of-Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+  ## [Description](#table-of-contents)
+  ${data.title}
+  ${data.description}
+  ## [Installation](#table-of-contents)
+  ${data.installation}
+  
+  ## [Usage](#table-of-contents)
+  ${data.usage}
+  
+  ${renderLicenseSection(data.license)}
+ 
+  ## [Contributing](#table-of-contents)
+  ${data.contributing}
+  
+  ## [Tests](#table-of-contents)
+  ${data.tests}
+  
+  ## [Questions](#table-of-contents)
+  Please contact me using the following links:
+  [GitHub](https://github.com/${data.username})
+  [Email: ${data.email}]
+`;
+}
+
+module.exports = generateMarkdown;
