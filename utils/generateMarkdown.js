@@ -9,3 +9,15 @@ function renderLicenseBadge(license) {
     return ' ';
   }
 }
+
+// Function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+  if (license !== 'no license') {
+  return `
+  [${license}](https://choosealicense.com/licenses/)
+    `;
+  } else {
+    return ' ';
+  }
+}
