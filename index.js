@@ -68,3 +68,11 @@ const writeFile = fileContent => {
     });
 };
 
+// function to prompt questions and store user inputs
+const init = () => {
+
+    return inquirer.prompt(questions)
+    .then(readmeInfo => {
+        return readmeInfo;
+    })
+}
