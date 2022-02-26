@@ -51,3 +51,20 @@ const questions = [
         message: 'What is your email address?',
     },
 ];
+
+// function to write README file
+const writeFile = fileContent => {
+    return new Promise((fulfill, reject) => {
+        fs.writeFile('README.md', fileContent,  err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            fulfill({
+                ok: true,
+                message: 'File successfully created!'
+            });
+        });
+    });
+};
+
