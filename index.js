@@ -76,3 +76,19 @@ const init = () => {
         return readmeInfo;
     })
 }
+
+// Function call to initialize app
+init()
+.then(readmeInfo => {
+    console.log(readmeInfo);
+    return generateMarkdown(readmeInfo);
+})
+.then(page => {
+    return writeFile(page);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse.message);
+})
+.catch(err => {
+    console.log(err);
+})
