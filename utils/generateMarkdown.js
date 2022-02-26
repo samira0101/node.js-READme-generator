@@ -34,3 +34,13 @@ function renderLicenseSection(license) {
     return ' ';
   }
  }
+// Function that returns the license in the table conten
+// If there is no license, return an empty stringt
+function renderLicenseTable(license){
+  if (license !== 'no license') {
+    return `
+    * [License](#license)`;
+  } else {
+    return ' ';
+  }
+}
